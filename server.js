@@ -14,7 +14,13 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
+);
 
 var accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"), {
   flags: "a",
