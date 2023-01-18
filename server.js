@@ -16,7 +16,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: "https://role-based-auth-system.vercel.app/",
+    origin: "*",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
