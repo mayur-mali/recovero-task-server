@@ -9,7 +9,9 @@ const {
 } = require("../controllers/userController");
 
 var router = express.Router();
-
+router.get("/", (req, res) => {
+  res.send("app is running");
+});
 router.post("/create-admin", createAdmin);
 router.post("/createMember", [
   passport.authenticate("jwt", { session: false }),
